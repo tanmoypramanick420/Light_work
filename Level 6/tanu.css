@@ -1,0 +1,93 @@
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.light {
+  width: 13.6px;
+  height: 13.6px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0; /* Initially hidden */
+}
+
+.light.star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.moon {
+  width: 60px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50% 0 0 50%;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  opacity: 0;
+}
+
+.light.on {
+  opacity: 1; /* Visible when on */
+}
+
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+body{background-color: black;}
